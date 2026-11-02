@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gare Hay Mohammadi — double peau perforée (maquette 3D)</title>
+<meta name="description" content="Maquette 3D de la double peau perforée de la gare RER Hay Mohammadi — concept V1. Rotation, zoom et réalité augmentée sur téléphone.">
+<meta property="og:title" content="Gare Hay Mohammadi — double peau perforée (maquette 3D)">
+<meta property="og:description" content="Ouvrir la maquette 3D : rotation, zoom et réalité augmentée sur Android et iPhone.">
+<meta property="og:image" content="poster.jpg">
+<meta name="theme-color" content="#eeedea">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231f2124'/%3E%3Cpath d='M6 24 L6 12 Q16 4 26 12 L26 24 L21 24 Q21 15 16 15 Q11 15 11 24 Z' fill='%23c9a462'/%3E%3C/svg%3E">
+<script type="module" src="model-viewer.min.js"></script>
+<style>
+  :root { --ink: #1f2124; --muted: #6b6a66; --card: rgba(250, 249, 246, 0.94); --gold: #b8913f; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: #eeedea; color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  model-viewer { position: fixed; inset: 0; width: 100%; height: 100%; background: #eeedea;
+    --poster-color: #eeedea; --progress-bar-color: #b8913f; }
+  .card { position: fixed; left: max(12px, env(safe-area-inset-left)); top: max(12px, env(safe-area-inset-top));
+    max-width: min(440px, calc(100% - 24px)); background: var(--card); border-radius: 12px; padding: 10px 14px;
+    box-shadow: 0 1px 8px rgba(0,0,0,.08); z-index: 2; }
+  .card h1 { font-size: 15px; margin: 0 0 3px; font-weight: 650; }
+  .card p { font-size: 12px; margin: 0; color: var(--muted); line-height: 1.45; }
+  .k { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin: 0 4px 0 8px; vertical-align: -1px; }
+  .bar { position: fixed; left: 50%; transform: translateX(-50%); bottom: max(14px, env(safe-area-inset-bottom));
+    display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; width: calc(100% - 24px); z-index: 2; }
+  .bar button, .ar { appearance: none; border: 0; background: var(--card); color: var(--ink); font: inherit; font-size: 13px;
+    padding: 10px 13px; border-radius: 999px; box-shadow: 0 1px 6px rgba(0,0,0,.12); cursor: pointer; }
+  .bar button.on { background: var(--ink); color: #fff; }
+  .ar { position: absolute; right: max(12px, env(safe-area-inset-right)); bottom: max(76px, calc(env(safe-area-inset-bottom) + 64px));
+    background: var(--ink); color: #fff; font-weight: 600; display: flex; align-items: center; gap: 7px; }
+  .ar svg { width: 18px; height: 18px; }
+  .qr { position: fixed; right: 14px; top: 14px; background: #fff; border-radius: 12px; padding: 10px 10px 6px;
+    box-shadow: 0 1px 8px rgba(0,0,0,.1); text-align: center; font-size: 11px; color: var(--muted); z-index: 2; }
+  .qr img { width: 120px; height: 120px; display: block; }
+  .hint { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(max(14px, env(safe-area-inset-bottom)) + 52px);
+    font-size: 11px; color: var(--muted); z-index: 1; white-space: nowrap; }
+  .err { position: fixed; inset: auto 12px 120px 12px; background: #fff3f0; color: #8a2b20; border-radius: 10px; padding: 10px 14px;
+    font-size: 13px; display: none; z-index: 3; }
+  @media (max-width: 720px), (pointer: coarse) { .qr { display: none; } }
+  @media (max-width: 560px) { .hint { display: none; } .card { padding: 8px 11px; } .card h1 { font-size: 13.5px; } .card p { font-size: 11px; }
+    .bar button { font-size: 12px; padding: 9px 11px; } }
+  noscript div { position: fixed; inset: 0; display: grid; place-items: center; padding: 24px; text-align: center; background: #eeedea; }
+</style>
+</head>
+<body>
+<model-viewer id="mv" src="coque.glb" ios-src="coque.usdz" poster="poster.jpg" alt="Maquette 3D de la double peau perforée de la gare Hay Mohammadi"
+  camera-controls touch-action="pan-y" interaction-prompt="none" shadow-intensity="0.6" shadow-softness="0.9" exposure="1.05"
+  tone-mapping="aces" environment-image="neutral" field-of-view="38deg"
+  camera-orbit="-44.3deg 69.9deg 62.5m" camera-target="-2.18m 3.49m 1.67m" min-camera-orbit="auto 15deg 6m" max-camera-orbit="auto 100deg 140m"
+  interpolation-decay="160" ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto" ar-placement="floor">
+  <button slot="ar-button" class="ar" aria-label="Voir en réalité augmentée">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg>
+    Voir en RA
+  </button>
+</model-viewer>
+
+<div class="card">
+  <h1>Gare Hay Mohammadi — double peau perforée</h1>
+  <p>Concept V1 : fil attracteur + cascade du motif ×3 → ×34, gravure en bande.
+    <span class="k" style="background:#3a3c41"></span>perforées <span class="k" style="background:#26282c"></span>pleines
+    <span class="k" style="background:#c9a462"></span>gravure</p>
+</div>
+<div class="qr"><img src="qr.svg" alt="QR code de cette page">Scanner pour ouvrir<br>sur téléphone</div>
+<div class="hint">1 doigt : tourner · 2 doigts : zoom et déplacer</div>
+<div class="bar">
+  <button data-v="ensemble">Vue d'ensemble</button>
+  <button data-v="avant">Façade avant</button>
+  <button data-v="angle">Angle SO ×34</button>
+  <button id="spin">Rotation</button>
+</div>
+<div class="err" id="err"></div>
+<noscript><div>La maquette 3D nécessite JavaScript : ouvrez cette page dans Chrome (Android) ou Safari (iPhone).</div></noscript>
+
+<script>
+  const V = {
+    ensemble: ['-44.3deg 69.9deg 62.5m', '-2.18m 3.49m 1.67m'],
+    avant: ['13.8deg 95.3deg 33.6m', '-3.18m 4.79m 12.17m'],
+    angle: ['-45.7deg 95.9deg 30.9m', '-15.18m 4.99m 12.17m']
+  };
+  const mv = document.getElementById('mv'), spin = document.getElementById('spin'), err = document.getElementById('err');
+  // écran portrait (téléphone) : on recule la caméra pour voir toute la maquette
+  function orbit(o) {
+    const a = innerWidth / innerHeight; if (a >= 1.05) return o;
+    const p = o.split(' '); const r = parseFloat(p[2]) * Math.min(1.9, 1.05 / a);
+    return p[0] + ' ' + p[1] + ' ' + r.toFixed(1) + 'm';
+  }
+  let cur = 'ensemble';
+  function go(k) { cur = k; const [o, t] = V[k]; mv.cameraTarget = t; mv.cameraOrbit = orbit(o); }
+  go('ensemble'); mv.jumpCameraToGoal && mv.addEventListener('load', () => mv.jumpCameraToGoal());
+  addEventListener('resize', () => go(cur));
+  document.querySelectorAll('[data-v]').forEach(b => b.addEventListener('click', () => {
+    mv.autoRotate = false; spin.classList.remove('on'); go(b.dataset.v);
+  }));
+  spin.addEventListener('click', () => { mv.autoRotate = !mv.autoRotate; mv.rotationPerSecond = '12deg'; spin.classList.toggle('on', mv.autoRotate); });
+  mv.addEventListener('error', (e) => { err.style.display = 'block';
+    err.textContent = "La maquette n'a pas pu se charger (" + ((e.detail && e.detail.type) || 'erreur') + "). Rechargez la page ou ouvrez-la dans Chrome / Safari."; });
+  // téléphones très anciens : pas de WebGL
+  try { const c = document.createElement('canvas'); if (!(c.getContext('webgl2') || c.getContext('webgl'))) throw 0; }
+  catch (e) { err.style.display = 'block'; err.textContent = "Ce navigateur ne gère pas la 3D. Ouvrez la page dans Chrome (Android) ou Safari (iPhone) à jour."; }
+</script>
+</body>
+</html>
